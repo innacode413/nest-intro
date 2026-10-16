@@ -1,0 +1,13 @@
+{
+  "name": "00-express-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Типовий Express-застосунок «Бібліотека», де все звалено в один файл",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

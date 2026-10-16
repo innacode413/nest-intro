@@ -1,0 +1,41 @@
+{
+  "name": "nestjs-intro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Навчальний проєкт: вступний урок з NestJS «Від Express до Nest»",
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=10.0.0"
+  },
+  "workspaces": [
+    "00-why-nest/express-app",
+    "02-first-nest-app/app",
+    "03-controllers/express-version",
+    "03-controllers/nest-version",
+    "04-services-and-di/app",
+    "05-modules/app"
+  ],
+  "scripts": {
+    "start:00": "npm run start --workspace=00-why-nest/express-app",
+    "demo:01:1": "ts-node --project 01-typescript-and-decorators/tsconfig.json 01-typescript-and-decorators/src/01-types.ts",
+    "demo:01:2": "ts-node --project 01-typescript-and-decorators/tsconfig.json 01-typescript-and-decorators/src/02-classes.ts",
+    "demo:01:3": "ts-node --project 01-typescript-and-decorators/tsconfig.json 01-typescript-and-decorators/src/03-decorators.ts",
+    "demo:01:4": "ts-node --project 01-typescript-and-decorators/tsconfig.json 01-typescript-and-decorators/src/04-metadata.ts",
+    "start:02": "npm run start --workspace=02-first-nest-app/app",
+    "start:03": "npm run start --workspace=03-controllers/nest-version",
+    "start:03:express": "npm run start --workspace=03-controllers/express-version",
+    "start:04": "npm run start --workspace=04-services-and-di/app",
+    "start:04:di": "ts-node --project 04-services-and-di/di-from-scratch/tsconfig.json 04-services-and-di/di-from-scratch/index.ts",
+    "start:05": "npm run start --workspace=05-modules/app",
+    "build:all": "npm run build --workspace=02-first-nest-app/app --workspace=03-controllers/nest-version --workspace=04-services-and-di/app --workspace=05-modules/app"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "ts-node": "^10.9.2",
+    "@types/node": "^24.0.0",
+    "prettier": "^3.4.2"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  }
+}

@@ -1,0 +1,39 @@
+### Застосунок слухає :3004 (npm run start:04)
+
+### Усі книжки
+GET http://localhost:3004/books
+
+### Фільтр за автором
+GET http://localhost:3004/books?author=Шевченко
+
+### Одна книжка
+GET http://localhost:3004/books/1
+
+### Книжка, якої не існує (404)
+GET http://localhost:3004/books/999
+
+### Невалідний id (400)
+GET http://localhost:3004/books/abc
+
+### Створити книжку
+POST http://localhost:3004/books
+Content-Type: application/json
+
+{
+  "title": "Інтернат",
+  "author": "Сергій Жадан",
+  "year": 2017
+}
+
+### Оновити книжку
+PUT http://localhost:3004/books/1
+Content-Type: application/json
+
+{
+  "title": "Кобзар (повне видання)",
+  "author": "Тарас Шевченко",
+  "year": 1840
+}
+
+### Видалити книжку (204)
+DELETE http://localhost:3004/books/3

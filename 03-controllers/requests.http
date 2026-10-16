@@ -1,0 +1,79 @@
+### ЗАПУСТІТЬ ОБИДВА ЗАСТОСУНКИ: npm run start:03 ТА npm run start:03:express
+### nest-version слухає :3003, express-version слухає :3103 - запити нижче
+### згруповані парами, щоб порівнювати відповіді.
+
+### [nest] Усі книжки
+GET http://localhost:3003/books
+
+### [express] Усі книжки
+GET http://localhost:3103/books
+
+### [nest] Фільтр за автором (@Query)
+GET http://localhost:3003/books?author=Шевченко
+
+### [express] Фільтр за автором (req.query)
+GET http://localhost:3103/books?author=Шевченко
+
+### [nest] Одна книжка (@Param)
+GET http://localhost:3003/books/1
+
+### [express] Одна книжка (req.params)
+GET http://localhost:3103/books/1
+
+### [nest] Книжка, якої не існує (404)
+GET http://localhost:3003/books/999
+
+### [express] Книжка, якої не існує (404)
+GET http://localhost:3103/books/999
+
+### [nest] Невалідний id (400)
+GET http://localhost:3003/books/abc
+
+### [express] Невалідний id (400)
+GET http://localhost:3103/books/abc
+
+### [nest] Створити книжку (@Body)
+POST http://localhost:3003/books
+Content-Type: application/json
+
+{
+  "title": "Інтернат",
+  "author": "Сергій Жадан",
+  "year": 2017
+}
+
+### [express] Створити книжку (req.body)
+POST http://localhost:3103/books
+Content-Type: application/json
+
+{
+  "title": "Інтернат",
+  "author": "Сергій Жадан",
+  "year": 2017
+}
+
+### [nest] Оновити книжку
+PUT http://localhost:3003/books/1
+Content-Type: application/json
+
+{
+  "title": "Кобзар (повне видання)",
+  "author": "Тарас Шевченко",
+  "year": 1840
+}
+
+### [express] Оновити книжку
+PUT http://localhost:3103/books/1
+Content-Type: application/json
+
+{
+  "title": "Кобзар (повне видання)",
+  "author": "Тарас Шевченко",
+  "year": 1840
+}
+
+### [nest] Видалити книжку (204)
+DELETE http://localhost:3003/books/3
+
+### [express] Видалити книжку (204)
+DELETE http://localhost:3103/books/3

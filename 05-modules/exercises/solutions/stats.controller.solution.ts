@@ -1,0 +1,16 @@
+/**
+ * stats.controller.solution.ts
+ * Завдання 2. Скопіюйте в ../../app/src/stats/stats.controller.ts.
+ */
+import { Controller, Get } from '@nestjs/common';
+import { StatsService } from './stats.service';
+
+@Controller('stats')
+export class StatsController {
+  constructor(private readonly statsService: StatsService) {}
+
+  @Get('summary')
+  getSummary() {
+    return this.statsService.getSummary();
+  }
+}

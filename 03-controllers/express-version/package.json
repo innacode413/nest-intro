@@ -1,0 +1,13 @@
+{
+  "name": "03-express-version",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ендпоінти /books, написані на Express - для порівняння з nest-version",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
